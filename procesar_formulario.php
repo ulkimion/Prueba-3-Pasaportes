@@ -19,6 +19,7 @@
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
               <a class="nav-link" href="eliminar_usuario.php">Administrar</a>
+              <a class="nav-link" href="ingresar.php">Ingresar</a>
             </div>
           </div>
         </div>

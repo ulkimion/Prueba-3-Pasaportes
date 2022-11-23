@@ -20,16 +20,16 @@ if (isset($_COOKIE["EMAIL"])){
     
     <main class="form-signin w-100 m-auto">
     <form action="login.php" method="POST">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
 
         <div class="form-floating">
-        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+        <input type="correo" name="correo" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Ingresar correo</label>
         </div>
 
         <div class="form-floating">
-        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="contrasena" name="contrasena" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
         </div>
 
         <div class="checkbox mb-3">
@@ -37,8 +37,7 @@ if (isset($_COOKIE["EMAIL"])){
             <input type="checkbox" value="remember-me"> Remember me
         </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
     </form>
     </main>
     

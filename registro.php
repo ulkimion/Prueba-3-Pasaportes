@@ -19,6 +19,7 @@
               <a class="nav-link active" aria-current="page" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
               <a class="nav-link" href="admin_registros.php">Administrar</a>
+              <a class="nav-link" href="ingresar.php">Ingresar</a>
             </div>
           </div>
         </div>
@@ -43,6 +44,7 @@
                     <td>CORREO</td>
                     <td> <input type="text" placeholder="ingresa tu Correo" name="correo" required></td>
                 </tr>
+                <!-- Por motivos de tiempo, aun no se encriptara la contrasena, pero sera la primera cosa a hacer en la siguiente semana -->
                 <tr>
                     <td>CONTRASENA</td>
                     <td> <input type="text" placeholder="ingresa tu Correo" name="contrasena" required></td>

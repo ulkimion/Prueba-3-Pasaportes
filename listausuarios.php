@@ -23,6 +23,7 @@ include "conn.php";
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link active" aria-current="page" href="listausuarios.php">Lista Personas</a>
               <a class="nav-link" href="admin_registros.php">Administrar</a>
+              <a class="nav-link" href="ingresar.php">Ingresar</a>
             </div>
           </div>
         </div>
