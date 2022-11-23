@@ -40,6 +40,14 @@
                     <td> <input type="text" placeholder="ingresa tu Rut" name="rut" required></td>
                 </tr>
                 <tr>
+                    <td>CORREO</td>
+                    <td> <input type="text" placeholder="ingresa tu Correo" name="correo" required></td>
+                </tr>
+                <tr>
+                    <td>CONTRASENA</td>
+                    <td> <input type="text" placeholder="ingresa tu Correo" name="contrasena" required></td>
+                </tr>
+                <tr>
                     <td>FECHA DE NACIMIENTO</td>
                     <td> <input type="date" placeholder="ingresa tu fecha de nacimiento" name="fecha_nacimiento" required></td>
                 </tr>

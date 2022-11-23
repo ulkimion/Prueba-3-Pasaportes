@@ -32,6 +32,8 @@ $fecha_nacimiento = $_POST ["fecha_nacimiento"];
 $nacionalidad = $_POST ["nacionalidad"];
 $genero = $_POST ["genero"];
 $ciudad_residencia = $_POST["ciudad_residencia"];
+$contrasena = $_POST["contrasena"];
+$correo = $_POST["correo"];
 
 echo "$nombres $apellidos";
 echo "<br>";
@@ -48,8 +50,8 @@ echo "<br>";
 
 include "conn.php";
 include "uploadimage.php";
-$sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut, activo, administrador) 
-values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','$target_file','$fecha_nacimiento','$rut', 0, 0)";
+$sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut, activo, administrador, contrasena, correo) 
+values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','$target_file','$fecha_nacimiento','$rut', 0, 0,'$contrasena', '$correo')";
 if($conexion->query($sql)===TRUE)
 {
     echo "Los registros se ingresaron con éxito";

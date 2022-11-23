@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 05:50 PM
+-- Generation Time: Nov 23, 2022 at 09:32 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -38,8 +38,23 @@ CREATE TABLE `usuarios` (
   `fecha_nacimiento` date NOT NULL,
   `rut` varchar(11) NOT NULL,
   `activo` int(1) NOT NULL,
-  `administrador` int(1) NOT NULL
+  `administrador` int(1) NOT NULL,
+  `contrasena` varchar(30) NOT NULL,
+  `correo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `ciudad_residencia`, `foto`, `fecha_nacimiento`, `rut`, `activo`, `administrador`, `contrasena`, `correo`) VALUES
+(1, 'w', 'w', 'Chilena', 'Femenino', 'weq', 'img/23-11-202218-01-23_6607w.png', '2022-11-02', 'wer', 1, 1, '', ''),
+(4, 'wqe', 'qwe', 'Chilena', 'Masculino', 'qrt', 'img/23-11-202219-16-14_4682wqe.png', '2022-11-07', 'qwe', 1, 0, '', ''),
+(5, 'wqe', 'qwe', 'Chilena', 'Masculino', 'qrt', 'img/23-11-202219-16-16_5167wqe.png', '2022-11-07', 'qwe', 1, 0, '', ''),
+(7, 'wqe', 'qwe', 'Chilena', 'Masculino', 'qrt', 'img/23-11-202219-17-06_9641wqe.png', '2022-11-07', 'qwe', 0, 0, '', ''),
+(8, 'wqe', 'qwe', 'Chilena', 'Masculino', 'qrt', 'img/23-11-202219-17-08_9573wqe.png', '2022-11-07', 'qwe', 0, 0, '', ''),
+(9, 'wqe', 'qwe', 'Chilena', 'Masculino', 'qrt', 'img/23-11-202219-17-09_6303wqe.png', '2022-11-07', 'qwe', 0, 1, '', ''),
+(10, 'rew', 'wer', 'Chilena', 'Femenino', 'twewet', 'img/23-11-202221-32-12_6714rew.png', '2022-11-01', 'ewr', 0, 0, 'wre', 'wer');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +74,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
