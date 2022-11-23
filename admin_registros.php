@@ -48,7 +48,7 @@ $result = mysqli_num_rows($query);
 if($result > 0){
 
     while ($data = mysqli_fetch_array($query)){
-      if ($data["activo"] == 0){
+      if ($data["activo"] == 0 && $data["administrador"] == 0){
 ?>
 <tr>
     <td><?php echo $data["id"]; ?></td>
@@ -56,10 +56,10 @@ if($result > 0){
     <td><?php echo $data["apellidos"]; ?></td>
     <td><?php echo $data["rut"]; ?></td>
 
-    <td><a href="aprobar_usuario.php?id=<?=$row['id'];?>"><button type='button' 
+    <td><a href="aprobar_usuario.php?id=<?php echo $data['id'];?>"><button type='button' 
     class='btn btn-info btn-outline-secondary'>Aprobar</button></a></td>
 
-    <td><a href="eliminar_usuario.php?id=<?=$row['id'];?>"><button type='button' 
+    <td><a href="eliminar_usuario.php?id=<?php echo $data['id'];?>"><button type='button' 
     class='btn btn-danger btn-outline-secondary'>Eliminar</button></a></td>
 
 </tr>
