@@ -19,10 +19,10 @@ include "conn.php";
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link" href="index.html">Inicio</a>
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="admin_registros.php">Estadisticas</a>
+              <a class="nav-link active" aria-current="page" href="admin_registros.php">Administrar</a>
             </div>
           </div>
         </div>
@@ -35,34 +35,40 @@ include "conn.php";
             <th scope="col">Nombres</th>
             <th scope="col">Apellidos</th>
             <th scope="col">Rut</th>
-            <th scope="col">Perfil</th>
-            <th scope="col">PDF</th>
+            <th scope="col">Aprobar</th>
+            <th scope="col">Eliminar</th>
             </tr>
     </thead>
 
-<?php 
+    <?php 
 
-    $query = mysqli_query($conexion,"SELECT id, nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia, foto FROM usuarios");
-    
-    $result = mysqli_num_rows($query);
-    if($result > 0){
+$query = mysqli_query($conexion,"SELECT id, nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut, activo, administrador FROM usuarios");
 
-        while ($data = mysqli_fetch_array($query)){
+$result = mysqli_num_rows($query);
+if($result > 0){
+
+    while ($data = mysqli_fetch_array($query)){
+      if ($data["activo"] == 0){
 ?>
-    <tr>
-        <td><?php echo $data["id"]; ?></td>
-        <td><?php echo $data["nombres"]; ?></td>
-        <td><?php echo $data["apellidos"]; ?></td>
-        <td><?php echo $data["rut"]; ?></td>
-        <td><a href="usuario.php?id=<?php echo $data["id"]?>"><button type='button' 
-        class='btn btn-danger btn-outline-secondary'>Perfil</button></a></td>
-        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>&foto=<?php echo $data["foto"]?>">
-        <button type='button' class='btn btn-info btn-outline-secondary'>Crear PDF</button></a></td>
-    </tr>
+<tr>
+    <td><?php echo $data["id"]; ?></td>
+    <td><?php echo $data["nombres"]; ?></td>
+    <td><?php echo $data["apellidos"]; ?></td>
+    <td><?php echo $data["rut"]; ?></td>
+
+    <td><a href="aprobar_usuario.php?id=<?=$row['id'];?>"><button type='button' 
+    class='btn btn-info btn-outline-secondary'>Aprobar</button></a></td>
+
+    <td><a href="eliminar_usuario.php?id=<?=$row['id'];?>"><button type='button' 
+    class='btn btn-danger btn-outline-secondary'>Eliminar</button></a></td>
+
+</tr>
 <?php
-        }
+      }
     }
+}
 ?>
+
 
 
 </table>

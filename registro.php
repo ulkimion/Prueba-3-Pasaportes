@@ -15,10 +15,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              <a class="nav-link" href="registro.php">Ingresar Persona</a>
+              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="admin_registros.php">Estadisticas</a>
+              <a class="nav-link" href="admin_registros.php">Administrar</a>
             </div>
           </div>
         </div>

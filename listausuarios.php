@@ -19,10 +19,10 @@ include "conn.php";
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link" href="index.html">Inicio</a>
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
-              <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="admin_registros.php">Estadisticas</a>
+              <a class="nav-link active" aria-current="page" href="listausuarios.php">Lista Personas</a>
+              <a class="nav-link" href="admin_registros.php">Administrar</a>
             </div>
           </div>
         </div>
@@ -48,6 +48,7 @@ include "conn.php";
     if($result > 0){
 
         while ($data = mysqli_fetch_array($query)){
+          if ($data["activo"] == 1){
 ?>
     <tr>
         <td><?php echo $data["id"]; ?></td>
@@ -60,6 +61,7 @@ include "conn.php";
         <button type='button' class='btn btn-info btn-outline-secondary'>Crear PDF</button></a></td>
     </tr>
 <?php
+          }
         }
     }
 ?>

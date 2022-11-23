@@ -48,8 +48,8 @@ echo "<br>";
 
 include "conn.php";
 include "uploadimage.php";
-$sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut) 
-values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','$target_file','$fecha_nacimiento','$rut')";
+$sql="INSERT INTO usuarios(nombres, apellidos, nacionalidad, genero, ciudad_residencia, foto, fecha_nacimiento, rut, activo, administrador) 
+values('$nombres','$apellidos','$nacionalidad','$genero','$ciudad_residencia','$target_file','$fecha_nacimiento','$rut', 0, 0)";
 if($conexion->query($sql)===TRUE)
 {
     echo "Los registros se ingresaron con éxito";
