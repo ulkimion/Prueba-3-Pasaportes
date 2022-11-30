@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_COOKIE["EMAIL"])){
+    echo $_COOKIE["EMAIL"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
