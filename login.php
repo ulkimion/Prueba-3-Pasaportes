@@ -7,27 +7,28 @@ $correo = $_POST["correo"];
 $contrasena = $_POST["contrasena"];
 
 
-if ($result = $conexion -> query("SELECT correo, contrasena FROM usuarios WHERE '$correo' = correo")) {
+if ($result = $conexion -> query("SELECT correo, contrasena, activo, administrador FROM usuarios WHERE '$correo' = correo AND '$contrasena' = contrasena AND activo = '1' AND administrador = '1'")) {
     if($result -> num_rows == 1){
-
         $obj = $result->fetch_object();
 
-        //echo $obj->contrasena;
-        //echo "<br>";
-        //echo $contrasena;
-
-        //por motivos de tiempo, las contrasenas se van a encriptar y comparar con los codigos debajo mas adelante
-
-        //$password_safe = password_verify($contrasena, $obj->contrasena);
-        
-        //if ($password_safe == true) {
             echo "Contraseña Valida";
             setcookie("CORREO", $correo, time()+3600);
-        //}
-    }
+                echo "<br> admin";
+            setcookie("ADMIN", '1', time()+3600);
+            }
+} else if ($result = $conexion -> query("SELECT correo, contrasena, activo, administrador FROM usuarios WHERE '$correo' = correo AND '$contrasena' = contrasena AND activo = '1' AND administrador = '0'")) {
+    {
+        if($result -> num_rows == 1){
+            $obj = $result->fetch_object();
     
-} else{
+                echo "Contraseña Valida";
+                setcookie("CORREO", $correo, time()+3600);
+                    echo "<br> no admin";
+                setcookie("ADMIN", '0', time()+3600);
+                }
+            }
+}
+else{    
     echo "Error en la consulta";
 }
-  
 $conexion -> close();

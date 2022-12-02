@@ -1,10 +1,3 @@
-<?php
-
-if (isset($_COOKIE["EMAIL"])){
-    echo $_COOKIE["EMAIL"];
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +32,18 @@ if (isset($_COOKIE["EMAIL"])){
   float: left;
   }
 
+  .usuario{
+  background-color: rgb(45, 123, 154);
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
+
+
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark"">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,13 +54,25 @@ if (isset($_COOKIE["EMAIL"])){
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               <a class="nav-link" href="registro.php">Ingresar Persona</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="admin_registros.php">Administrar</a>
               <a class="nav-link" href="ingresar.php">Ingresar</a>
+              <?php      
+                if (isset($_COOKIE["ADMIN"]) == '1'){
+                  ?>
+                    <a class="nav-link" href="admin_registros.php">Administrar</a>
+                  <?php } ?>
             </div>
           </div>
         </div>
       </nav>
+      <div class="usuario">
 
+        <?php      
+      if (isset($_COOKIE["CORREO"])){
+        echo $_COOKIE["CORREO"];
+        echo $_COOKIE["ADMIN"];
+        }  
+         ?>
+        </div>
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="1s">
