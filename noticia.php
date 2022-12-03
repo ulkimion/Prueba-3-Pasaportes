@@ -60,24 +60,16 @@ include "conn.php";
                                 <b>Cuerpo</b>:" . $row['cuerpo'] . "<br>
                                 <b>Visitas</b>:" . $row['visitas'] . "<br>
                                 <br>";
+                                $insert = "UPDATE noticias SET visitas = visitas+1 WHERE id=$id";
+                              $update = $conexion->query($insert);
                     }
                 }
+              
               ?>
               
             </div>
         </div>
-        <?php
-        $query = mysqli_query($conexion,"SELECT nombres, apellidos, fecha_nacimiento, rut, nacionalidad, genero, ciudad_residencia, foto FROM usuarios where id=$id");
-        $data = mysqli_fetch_array($query);
-        if($resultado->num_rows > 0){
-        ?>
-        <tr>
-        <td><a href="crear_pdf.php?id=<?php echo $data["id"]?>&nombres=<?php echo $data["nombres"]?>&apellidos=<?php echo $data["apellidos"]?>&fecha_nacimiento=<?php echo $data["fecha_nacimiento"]?>&rut=<?php echo $data["rut"]?>&nacionalidad=<?php echo $data["nacionalidad"]?>&genero=<?php echo $data["genero"]?>&ciudad_residencia=<?php echo $data["ciudad_residencia"]?>&foto=<?php echo $data["foto"]?>    ">
-        <button type='button' class='btn btn-sm btn-outline-secondary'>Crear PDF</button></a></td>
-        </tr>
-        <?php
-        }
-?>
+
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
