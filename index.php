@@ -51,7 +51,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               <a class="nav-link" href="registro.php">Registrase</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
               <a class="nav-link" href="ingresar.php">Ingresar</a>
@@ -61,6 +61,7 @@
                 if (isset($_COOKIE["ADMIN"]) == '1'){
                   ?>
                     <a class="nav-link" href="admin_registros.php">Administrar</a>
+                    <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>
                   <?php } ?>
             </div>
           </div>

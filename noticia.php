@@ -36,12 +36,12 @@ include "conn.php";
 
       <?php
                 $id = $_REQUEST['id'];
-                $sql = "SELECT * from usuarios WHERE id=$id";
+                $sql = "SELECT * from noticias WHERE id=$id";
                 $resultado = $conexion->query($sql);
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
                         echo "
-                        <img alt='' src='img/" . $row['foto'] . "' class='foto' display='inline-block' width='100%' height='auto%'>
+                        <img alt='' src='img/" . $row['imagen'] . "' class='foto' display='inline-block' width='100%' height='auto%'>
                   ";
                     }
                 }
@@ -50,18 +50,15 @@ include "conn.php";
             </div>
             <div class="col-md-5 col-sm-12">
                 <?php
-                $sql = "SELECT * from usuarios WHERE id=$id";
+                $sql = "SELECT * from noticias WHERE id=$id";
                 $resultado = $conexion->query($sql);
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
                         echo "<br>
-                                <b>Nombre</b>: " . $row['nombres'] . "<br>
-                                <b>Apellidos</b>: " . $row['apellidos'] . "<br>
-                                <b>Fecha de nacimiento</b>:" . $row['fecha_nacimiento'] . "<br>
-                                <b>Rut</b>:" . $row['rut'] . "<br>
-                                <b>Nacionalidad</b>:" . $row['nacionalidad'] . "<br>
-                                <b>Genero</b>:" . $row['genero'] . "<br>
-                                <b>Ciudad de residencia</b>: " . $row['ciudad_residencia'] . "<br>
+                                <b>Titulo</b>: " . $row['titulo'] . "<br>
+                                <b>Fecha</b>: " . $row['fecha'] . "<br>
+                                <b>Cuerpo</b>:" . $row['cuerpo'] . "<br>
+                                <b>Visitas</b>:" . $row['visitas'] . "<br>
                                 <br>";
                     }
                 }

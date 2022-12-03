@@ -19,11 +19,18 @@ include "conn.php";
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="index.html">Inicio</a>
-              <a class="nav-link" href="registro.php">Ingresar Persona</a>
-              <a class="nav-link active" aria-current="page" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="admin_registros.php">Administrar</a>
+              <a class="nav-link" href="index.php">Inicio</a>
+              <a class="nav-link" href="registro.php">Registrase</a>
+              <a class="nav-link" href="#">Lista Personas</a>
               <a class="nav-link" href="ingresar.php">Ingresar</a>
+              <a class="nav-link" href="lista_noticias.php">Noticias</a>
+              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
+              <?php      
+                if (isset($_COOKIE["ADMIN"]) == '1'){
+                  ?>
+                    <a class="nav-link" href="admin_registros.php">Administrar</a>
+                    <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>
+                  <?php } ?>
             </div>
           </div>
         </div>

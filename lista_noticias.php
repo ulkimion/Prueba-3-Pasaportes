@@ -30,17 +30,19 @@ include "conn.php";
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              <a class="nav-link" href="registro.php">Ingresar Persona</a>
+              <a class="nav-link"href="index.php">Inicio</a>
+              <a class="nav-link" href="registro.php">Registrase</a>
               <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="ingresar.php">Registro</a>
-              <a class="nav-link" href="lista_noticias.php">Noticias</a>
+              <a class="nav-link" href="ingresar.php">Ingresar</a>
+              <a class="nav-link active" aria-current="page" href="#">Noticias</a>
               <a class="nav-link" href="estadisticas.php">Estadisticas</a>
               <?php      
                 if (isset($_COOKIE["ADMIN"]) == '1'){
                   ?>
                     <a class="nav-link" href="admin_registros.php">Administrar</a>
+                    <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>
                   <?php } ?>
+            </div>
             </div>
           </div>
         </div>
@@ -77,7 +79,7 @@ include "conn.php";
                         <p class='card-text'><b>" . $row['titulo'] . "</b></p>
                         <div class='d-flex justify-content-between align-items-center'>
                         <div class='btn-group'>
-                            <a href='ver_noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Ver noticia</button></a>
+                            <a href='noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Ver noticia</button></a>
                             </div>";
                         if (isset($_COOKIE["ADMIN"]) == '1'){
                             echo"
