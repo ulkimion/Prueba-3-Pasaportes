@@ -64,7 +64,7 @@ include "conn.php";
                               $update = $conexion->query($insert);
                     }
                 }
-              //r
+              
               ?>
               
             </div>
