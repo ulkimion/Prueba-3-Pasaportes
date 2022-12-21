@@ -14,11 +14,11 @@ if ($result = $conexion -> query("SELECT correo, contrasena, activo, administrad
             echo "Contraseña Valida";
             $_SESSION['SessionState']="Active";
             $_SESSION['SessionAdmin']=$obj->administrador;
-            
-            setcookie("CORREO", $correo, time()+3600);
+            $_SESSION['SessionCorreo']=$obj->correo;
+          /*  setcookie("CORREO", $correo, time()+3600);
                 echo "<br> admin";
             setcookie("ADMIN", $_SESSION['SessionAdmin'] , time()+3600);
-            }
+     */  } 
 
 }
 else{    
@@ -27,4 +27,5 @@ else{
     session_unset();
     session_destroy();
 }
+header("location: index.php");
 $conexion -> close();

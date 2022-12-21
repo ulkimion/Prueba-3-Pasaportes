@@ -29,19 +29,24 @@ include "conn.php";
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link"href="index.php">Inicio</a>
-              <a class="nav-link" href="registro.php">Registrase</a>
-              <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="ingresar.php">Ingresar</a>
-              <a class="nav-link active" aria-current="page" href="#">Noticias</a>
-              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
-              <?php      
-                if (isset($_COOKIE["ADMIN"]) == '1'){
-                  ?>
-                    <a class="nav-link" href="admin_registros.php">Administrar</a>
-                    <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>
-                  <?php } ?>
+          <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <?php
+              session_start ();
+              if($_SESSION["SessionState"]=="Active") 
+              {echo " <a class='nav-link' href='registro.php'>Registrase</a>
+                <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
+                <a class='nav-link' href='lista_noticias.php'>Noticias</a>
+                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>
+                <a class='nav-link' href='logout.php'>Salir</a>";
+                if($_SESSION['SessionAdmin']==1){
+                  echo '<a class="nav-link" href="admin_registros.php">Administrar</a>
+                  <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>';
+                }
+              } else {
+                echo "<a class='nav-link' href='ingresar.php'>Ingresar</a>";
+              }
+             ?>
             </div>
             </div>
           </div>
@@ -66,6 +71,7 @@ include "conn.php";
         <div class="container">
             <div class="row">
                 <?php
+                
                 $sql = "SELECT * from noticias ORDER BY id DESC";
                 $resultado = $conexion->query($sql);
                 if ($resultado->num_rows > 0) {
@@ -81,7 +87,7 @@ include "conn.php";
                         <div class='btn-group'>
                             <a href='noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Ver noticia</button></a>
                             </div>";
-                        if (isset($_COOKIE["ADMIN"]) == '1'){
+                        if ($_SESSION['SessionAdmin'] == '1'){
                             echo"
                             <div class='btn-group'>
                             <a href='noticiasmod.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Modificar</button></a>
