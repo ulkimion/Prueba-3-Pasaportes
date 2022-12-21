@@ -64,7 +64,8 @@ if(empty($_SESSION['SessionState'])){
               {echo " <a class='nav-link' href='registro.php'>Registrase</a>
                 <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
                 <a class='nav-link' href='lista_noticias.php'>Noticias</a>
-                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>";
+                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>
+                <a class='nav-link' href='logout.php'>Salir</a>";
               } else {
                 echo "<a class='nav-link' href='ingresar.php'>Ingresar</a>";
               }
