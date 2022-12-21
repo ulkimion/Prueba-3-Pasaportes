@@ -42,9 +42,16 @@
 </style>
 </head>
 <body>
+<?php
+session_start();
 
+if(empty($_SESSION['SessionState'])){
+    $_SESSION['SessionState'] = "Inactive";
+}
 
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark"">
+?>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,11 +59,16 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              <a class="nav-link" href="registro.php">Registrase</a>
-              <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="ingresar.php">Ingresar</a>
-              <a class="nav-link" href="lista_noticias.php">Noticias</a>
-              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
+              <?php
+              if($_SESSION["SessionState"]=="Active") 
+              {echo " <a class='nav-link' href='registro.php'>Registrase</a>
+                <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
+                <a class='nav-link' href='lista_noticias.php'>Noticias</a>
+                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>";
+              } else {
+                echo "<a class='nav-link' href='ingresar.php'>Ingresar</a>";
+              }
+             ?>
               <?php      
                 if (isset($_COOKIE["ADMIN"]) == '1'){
                   ?>
