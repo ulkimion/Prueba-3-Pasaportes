@@ -20,8 +20,14 @@ if(empty($_SESSION['SessionState'])){
   background-color: rgb(45, 123, 154);
   height:30px;
   width: 100%;
-  text-align: center; 
-}
+  text-align: center; }
+
+  .titulo{
+        text-align: center;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+
 
 </style>
 
