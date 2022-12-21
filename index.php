@@ -61,7 +61,7 @@ if(empty($_SESSION['SessionState'])){
               <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               <?php
               if($_SESSION["SessionState"]=="Active") 
-              {echo " <a class='nav-link' href='registro.php'>Registrase</a>
+              {echo " 
                 <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
                 <a class='nav-link' href='lista_noticias.php'>Noticias</a>
                 <a class='nav-link' href='estadisticas.php'>Estadisticas</a>
@@ -72,6 +72,7 @@ if(empty($_SESSION['SessionState'])){
                 }
               } else {
                 echo "<a class='nav-link' href='ingresar.php'>Ingresar</a>";
+                echo "<a class='nav-link' href='registro.php'>Registrarse</a>";
               }
              ?>
             </div>

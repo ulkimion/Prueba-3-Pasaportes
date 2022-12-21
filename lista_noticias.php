@@ -30,11 +30,11 @@ include "conn.php";
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
               <?php
               session_start ();
               if($_SESSION["SessionState"]=="Active") 
-              {echo " <a class='nav-link' href='registro.php'>Registrase</a>
+              {echo " 
                 <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
                 <a class='nav-link' href='lista_noticias.php'>Noticias</a>
                 <a class='nav-link' href='estadisticas.php'>Estadisticas</a>

@@ -23,7 +23,7 @@ include "conn.php";
               <?php
               session_start ();
               if($_SESSION["SessionState"]=="Active") 
-              {echo " <a class='nav-link' href='registro.php'>Registrase</a>
+              {echo " 
                 <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
                 <a class='nav-link' href='lista_noticias.php'>Noticias</a>
                 <a class='nav-link' href='estadisticas.php'>Estadisticas</a>
