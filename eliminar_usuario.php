@@ -9,6 +9,7 @@ if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
 {
     $query = mysqli_query($conexion,"DELETE FROM usuarios where id='$id'");
+    header("location: admin_registros.php");
 }
     }}
 

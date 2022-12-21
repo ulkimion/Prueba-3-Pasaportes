@@ -64,8 +64,7 @@ if(empty($_SESSION['SessionState'])){
               {echo " 
                 <a class='nav-link' href='listausuarios.php'>Lista Personas</a> 
                 <a class='nav-link' href='lista_noticias.php'>Noticias</a>
-                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>
-                <a class='nav-link' href='logout.php'>Salir</a>";
+                <a class='nav-link' href='estadisticas.php'>Estadisticas</a>";
                 if($_SESSION['SessionAdmin']==1){
                   echo '<a class="nav-link" href="admin_registros.php">Administrar</a>
                   <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>';
@@ -74,6 +73,8 @@ if(empty($_SESSION['SessionState'])){
                 echo "<a class='nav-link' href='ingresar.php'>Ingresar</a>";
                 echo "<a class='nav-link' href='registro.php'>Registrarse</a>";
               }
+              if($_SESSION["SessionState"]=="Active") 
+              {echo "<a class='nav-link' href='logout.php'>Salir</a>";}
              ?>
             </div>
           </div>

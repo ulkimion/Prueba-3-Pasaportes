@@ -15,11 +15,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="index.html">Inicio</a>
-              <a class="nav-link" href="registro.php">Ingresar Persona</a>
-              <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="eliminar_usuario.php">Administrar</a>
-              <a class="nav-link" href="ingresar.php">Ingresar</a>
+              <a class="nav-link" href="index.php">Inicio</a>
+              <a class='nav-link' href='ingresar.php'>Ingresar</a>
+              <a class='nav-link' href='registro.php'>Registrarse</a>
             </div>
           </div>
         </div>
