@@ -98,7 +98,7 @@ $canada = mysqli_fetch_array($Canadiense);
       <div class="usuario">
 
         <?php      
-      if (isset($_COOKIE["CORREO"])){
+      if ($_SESSION["SessionState"]=="Active"){
         echo $_COOKIE["CORREO"];
         echo $_COOKIE["ADMIN"];
         }  
@@ -110,6 +110,39 @@ $canada = mysqli_fetch_array($Canadiense);
 
 
     <div id="piechart" style="width: 1500px; height: 900px;"></div>
+
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <?php
+                
+                $sql = "SELECT * from noticias ORDER BY id DESC";
+                $resultado = $conexion->query($sql);
+                if ($resultado->num_rows > 0) {
+                    while ($row = $resultado->fetch_assoc()) {
+
+                        echo "
+                    <div class='col-md-4'>
+                    <div class='card mb-4 box-shadow'>
+                        <img class='card-img-top' data-src='holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail' alt='Thumbnail [100%x225]' style='height: 225px; width: 100%; display: block;' src='img/noticias/" . $row['imagen'] . "' data-holder-rendered='true'>
+                        <div class='card-body'>
+                        <p class='card-text'><b>" . $row['titulo'] . "</b></p>
+                        <div class='d-flex justify-content-between align-items-center'>
+                        <div class='btn-group'>
+                            <a href='noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Ver noticia</button></a>
+                            </div>";
+                           echo" <small class='text-muted'> visitas: " . $row['visitas'] . "</small>
+                        </div>
+                        </div>
+                    </div>
+                    </div>";
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 
     <br>
 
