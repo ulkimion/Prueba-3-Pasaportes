@@ -28,6 +28,13 @@ $canada = mysqli_fetch_array($Canadiense);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+
+    .titulo{
+        text-align: center;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+
   .usuario{
   background-color: rgb(45, 123, 154);
   height:30px;
@@ -107,20 +114,18 @@ $canada = mysqli_fetch_array($Canadiense);
 
     </nav>
 
-
+    <div class= titulo>Registros por nacionalidad</div>
     <div id="piechart" style="width: 1500px; height: 900px;"></div>
 
-
+    <div class= titulo>Top 3 noticias mas vistas</div>
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
                 <?php
-                
-                $sql = "SELECT * from noticias ORDER BY id DESC";
+                $sql = "SELECT * from noticias ORDER BY visitas DESC LIMIT 3";
                 $resultado = $conexion->query($sql);
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
-
                         echo "
                     <div class='col-md-4'>
                     <div class='card mb-4 box-shadow'>
