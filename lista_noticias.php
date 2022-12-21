@@ -88,7 +88,7 @@ session_start();
                         if ($_SESSION['SessionAdmin'] == '1'){
                             echo"
                             <div class='btn-group'>
-                            <a href='noticiasmod.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Modificar</button></a>
+                            <a href='editar_noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Modificar</button></a>
                             </div>";
                         }
                            echo" <small class='text-muted'>" . $row['fecha'] . "</small>

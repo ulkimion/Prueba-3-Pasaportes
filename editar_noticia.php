@@ -77,68 +77,26 @@ session_start();
                 
                 $id = $_REQUEST['id'];
             
-                $sql = "SELECT * from usuarios WHERE id=$id";
+                $sql = "SELECT * from noticias WHERE id=$id";
                 $resultado = $conexion->query($sql);
 
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
-        echo'' . $row['id'] .'';
 ?>
 
-      <form action="editar2.php?<?php echo'id=' . $row['id'] .'';?>" method="POST" enctype="multipart/form-data">
+      <form action="editar2_noticia.php?<?php echo'id=' . $row['id'] .'';?>" method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
-                    <td>NOMBRE</td>
-                    <td> <input type="text" value="<?php echo'' . $row['nombres'] .''; ?>" name="nombres" required></td>
+                    <td>TITULO</td>
+                    <td> <input type="text" value="<?php echo'' . $row['titulo'] .''; ?>" name="titulo" required></td>
                 </tr>
                 <tr>
-                    <td>APELLIDO</td>
-                    <td> <input type="text" value="<?php echo'' . $row['apellidos'] .''; ?>" name="apellidos" required></td>
+                    <td>CUERPO</td>
+                    <td> <input type="text" value="<?php echo'' . $row['cuerpo'] .''; ?>" name="cuerpo" required></td>
                 </tr>
                 <tr>
-                    <td>RUT</td>
-                    <td> <input type="text" value="<?php echo'' . $row['rut'] .''; ?>" name="rut" required></td>
-                </tr>
-                <tr>
-                    <td>CORREO</td>
-                    <td> <input type="text" value="<?php echo'' . $row['correo'] .''; ?>" name="correo" required></td>
-                </tr>
-                <!-- Por motivos de tiempo, aun no se encriptara la contrasena, pero sera la primera cosa a hacer en la siguiente semana -->
-                <tr>
-                    <td>CONTRASENA</td>
-                    <td> <input type="text" value="<?php echo'' . $row['contrasena'] .''; ?>" name="contrasena" required></td>
-                </tr>
-                <tr>
-                    <td>FECHA DE NACIMIENTO</td>
-                    <td> <input type="date" value="<?php echo'' . $row['fecha_nacimiento'] .''; ?>" name="fecha_nacimiento" required></td>
-                </tr>
-                <tr>
-                    <td>NACIONALIDAD</td>
-                    <td> 
-                        <select name="nacionalidad" value="<?php echo'' . $row['nacionalidad'] .''; ?>">
-                            <option value="Chilena">Chilena</option>
-                            <option value="Canadiense">Canadiense</option>
-                            <option value="Uruguay">Uruguaya</option>
-                        </select>
-                </td>
-                </tr>
-                <tr>
-                    <td>GENERO</td>
-                    <td> 
-                        <input type="radio" name="genero" value="Femenino"> FEMENINO
-                         <input type="radio" name="genero" value="Masculino"> MASCULINO
-                         <input type="radio" name="genero" value="OTRO"> OTRO
-                </td>
-                </tr>
-                <tr>
-                    <td>CIUDAD DE RESIDENCIA</td>
-                    <td> <input type="text" value="<?php echo'' . $row['ciudad_residencia'] .''; ?>" name="ciudad_residencia" required></td>
-                </tr>
-                <tr>
-                    <td>
-                    <label for="fileToUpload">Foto:</label>
-                    <input type="file" id="fileToUpload" name="fileToUpload" required>
-                    </td>
+                    <td>FECHA</td>
+                    <td> <input type="date" value="<?php echo'' . $row['fecha'] .''; ?>" name="fecha" required></td>
                 </tr>
                 <tr>
                     <td>
