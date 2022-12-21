@@ -11,8 +11,18 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Inicio</title>
+    <style>
+    .usuario{
+  background-color: rgb(45, 123, 154);
+  height:30px;
+  width: 100%;
+  text-align: center; 
+}
+
+</style>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark"">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,6 +51,14 @@ session_start();
           </div>
         </div>
       </nav>
+      <div class="usuario">
+
+        <?php      
+      if ($_SESSION["SessionState"]=="Active"){
+        echo $_SESSION['SessionCorreo'];
+        }  
+      else { echo "Aun no a ingresado";}
+         ?>
 
 <table class="table">
     <thead>

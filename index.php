@@ -88,6 +88,7 @@ if(empty($_SESSION['SessionState'])){
         }  
       else { echo "Aun no a ingresado";}
          ?>
+
          
         </div>
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">

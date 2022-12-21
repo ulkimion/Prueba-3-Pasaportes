@@ -30,9 +30,9 @@ $canada = mysqli_fetch_array($Canadiense);
     <style>
   .usuario{
   background-color: rgb(45, 123, 154);
-  height: 30px;
+  height:30px;
   width: 100%;
-  text-align: center;
+  text-align: center; 
 }
 
 </style>
@@ -97,10 +97,9 @@ $canada = mysqli_fetch_array($Canadiense);
       </nav>
       <div class="usuario">
 
-        <?php      
+      <?php      
       if ($_SESSION["SessionState"]=="Active"){
-        echo $_COOKIE["CORREO"];
-        echo $_COOKIE["ADMIN"];
+        echo $_SESSION['SessionCorreo'];
         }  
       else { echo "Aun no a ingresado";}
          ?>

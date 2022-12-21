@@ -57,15 +57,11 @@ session_start();
       <div class="usuario">
 
         <?php      
-      if (isset($_COOKIE["CORREO"])){
-        echo $_COOKIE["CORREO"];
-        echo $_COOKIE["ADMIN"];
+      if ($_SESSION["SessionState"]=="Active"){
+        echo $_SESSION['SessionCorreo'];
         }  
       else { echo "Aun no a ingresado";}
          ?>
-        </div>
-
-    </nav>
 
     <br>
 
