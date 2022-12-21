@@ -35,6 +35,7 @@ $ciudad_residencia = $_POST["ciudad_residencia"];
 $contrasena = $_POST["contrasena"];
 $correo = $_POST["correo"];
 
+echo "$id";
 echo "$nombres $apellidos";
 echo "<br>";
 echo "$rut";

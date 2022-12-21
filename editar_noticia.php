@@ -82,6 +82,7 @@ session_start();
 
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
+        echo'' . $row['id'] .'';
 ?>
 
       <form action="editar2.php?<?php echo'id=' . $row['id'] .'';?>" method="POST" enctype="multipart/form-data">
