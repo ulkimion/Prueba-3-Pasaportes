@@ -2,7 +2,7 @@
 
 include "conn.php";
 
-
+session_start();
 $correo = $_POST["correo"];
 $contrasena = $_POST["contrasena"];
 
@@ -12,6 +12,7 @@ if ($result = $conexion -> query("SELECT correo, contrasena, activo, administrad
         $obj = $result->fetch_object();
 
             echo "Contraseña Valida";
+            $_SESSION['SessionState']="Active";
             setcookie("CORREO", $correo, time()+3600);
                 echo "<br> admin";
             setcookie("ADMIN", '1', time()+3600);
@@ -29,6 +30,9 @@ if ($result = $conexion -> query("SELECT correo, contrasena, activo, administrad
             }
 }
 else{    
-    echo "Error en la consulta";
+    echo "Contraseña inválida";
+    $_SESSION['SessionState']="Inactive";
+    session_unset();
+    session_destroy();
 }
 $conexion -> close();
