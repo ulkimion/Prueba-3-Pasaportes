@@ -8,7 +8,7 @@
     <title>Inicio</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark"">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,17 +16,8 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link" href="index.php">Inicio</a>
-              <a class="nav-link active" aria-current="page"" href="#">Registrase</a>
-              <a class="nav-link" href="listausuarios.php">Lista Personas</a>
-              <a class="nav-link" href="ingresar.php">Ingresar</a>
-              <a class="nav-link" href="lista_noticias.php">Noticias</a>
-              <a class="nav-link" href="estadisticas.php">Estadisticas</a>
-              <?php      
-                if (isset($_COOKIE["ADMIN"]) == '1'){
-                  ?>
-                    <a class="nav-link" href="admin_registros.php">Administrar</a>
-                    <a class="nav-link" href="registrar_noticia">Ingresar Noticia</a>
-                  <?php } ?>
+              <a class="nav-link active" aria-current="page" href="#">Registrarse</a>
+              
             </div>
           </div>
         </div>
