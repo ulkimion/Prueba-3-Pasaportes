@@ -55,7 +55,7 @@ session_start();
                 <tr>
                     <td>Categoría</td>
                     <td> 
-                        <select name="nacionalidad">
+                        <select name="categoria">
                             <option value="deportes">Deportes</option>
                             <option value="nacional">Nacional</option>
                             <option value="internacional">Internacional</option>
