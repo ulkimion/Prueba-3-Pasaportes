@@ -44,8 +44,8 @@
                 </tr>
                 <!-- Por motivos de tiempo, aun no se encriptara la contrasena, pero sera la primera cosa a hacer en la siguiente semana -->
                 <tr>
-                    <td>CONTRASENA</td>
-                    <td> <input type="text" placeholder="ingresa tu Correo" name="contrasena" required></td>
+                    <td>CONTRASEÑA</td>
+                    <td> <input type="password" placeholder="ingresa tu Contraseña" name="contrasena" required></td>
                 </tr>
                 <tr>
                     <td>FECHA DE NACIMIENTO</td>

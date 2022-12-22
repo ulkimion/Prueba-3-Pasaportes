@@ -16,7 +16,7 @@
         <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
 
         <div class="form-floating">
-        <input type="correo" name="correo" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="text" name="correo" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Ingresar correo</label>
         </div>
 
