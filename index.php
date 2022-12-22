@@ -85,12 +85,41 @@ if(empty($_SESSION['SessionState'])){
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+       <div class="container" >
+       <div class="row" style = " height: 600 px; ">
+       <?php
+                include  "conn.php";
+                $sql = "SELECT * from noticias ORDER BY RAND() LIMIT 3";
+                $resultado = $conexion->query($sql);
+                if ($resultado->num_rows > 0) {
+                    while ($row = $resultado->fetch_assoc()) {
 
-      <div class="div2">ayuda</div>
-      <div class="div1">ayuda</div>
-      <div class="div1">ayuda</div>
-      <div class="div1">ayuda</div>
-
+                        echo "
+                    <div class='col-md-4'>
+                    <div class='card mb-4 box-shadow'>
+                        <img class='card-img-top' data-src='holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail' alt='Thumbnail [100%x225]' style='height: 225px; width: 100%; display: block;' src='img/noticias/" . $row['imagen'] . "' data-holder-rendered='true'>
+                        <div class='card-body'>
+                        <p class='card-text'><b>" . $row['titulo'] . "</b></p>
+                        <div class='d-flex justify-content-between align-items-center'>
+                        <div class='btn-group'>
+                            <a href='noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Ver noticia</button></a>
+                            </div>";
+                        if ($_SESSION['SessionAdmin'] == '1'){
+                            echo"
+                            <div class='btn-group'>
+                            <a href='editar_noticia.php?id=" . $row['id'] . "'target='_self'><button type='button' class='btn btn-sm btn-outline-secondary'>Modificar</button></a>
+                            </div>";
+                        }
+                           echo" <small class='text-muted'>" . $row['fecha'] . "</small>
+                        </div>
+                        </div>
+                    </div>
+                    </div>";
+                    }
+                }
+                ?>
+       </div>
+      </div>
 
 
       <footer class="text-center text-white fixed-bottom" style="background-color: #221144;">
