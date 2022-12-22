@@ -31,7 +31,7 @@ session_start();
       if ($_SESSION["SessionState"]=="Active"){
         echo $_SESSION['SessionCorreo'];
         }  
-      else { echo "Aun no a ingresado";}
+      else { echo "Noticias no registrada";}
          ?>
       <form action="procesar_noticia.php" method="POST" enctype="multipart/form-data">
             <table>
